@@ -26,8 +26,6 @@ Para gerenciamento do projeto e dependências, utilizou-se o [uv](https://docs.a
 
 Em meados de setembro de 2025 surgiu a necessidade de obter o nome de diversos médicos e eu só tinha os dados do CRM dos médicos.
 
-Dessa forma foi criado o
-_package_ [pyCFM](https://dev.azure.com/mpsp/Informa%C3%A7%C3%B5es%20Estat%C3%ADsticas/_git/pyesaj),
-que obtem os dados
+Dessa forma foi criado o _package_ [pyCFM](https://dev.azure.com/mpsp/Informa%C3%A7%C3%B5es%20Estat%C3%ADsticas/_git/pyesaj), que obtem os dados dos médicos.
 
 ![CFM](./assets/logo_cfm.jpg)
