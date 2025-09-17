@@ -6,6 +6,7 @@ sss
 
 import json
 import warnings
+from typing import Literal
 from pathlib import Path
 from urllib.parse import urljoin
 
@@ -19,9 +20,26 @@ URL_BASE = 'https://portal.cfm.org.br/'
 
 
 class Medico:
-    def __init__(self, crm=240538) -> None:
-        self.crm_class = crm
+    def __init__(
+        self,
+        nome: str | None = None,
+        crm: int | None = None,
+        uf: Literal['SP', 'RJ', None] = None,
+    ) -> None:
+        """
+        _summary_
 
+        :param crm: _description_
+        :type crm: int
+        :param uf: _description_
+        :type uf: Literal[&#39;SP&#39;, &#39;RJ&#39;]
+        """
+        # Parâmetros de Pesquisa
+        self.crm_input = '' if crm is None else crm
+        self.uf_input = '' if uf is None else uf
+        self.nome_input = '' if nome is None else nome
+
+        # Chamada de Funções
         self._busca_medico()
         self._buscar_foto()
         self._request_foto()
@@ -49,9 +67,9 @@ class Medico:
                     'useCaptchav2': True,
                     'captcha': '0cAFcWeA5PbSMF1dx0PQ4mDwsHahYn_y0MD43eMwGRjSEGARjaQvG6GGn7ZaRIYj3sxnlBZqdt7yU1URWLsS3VTm0laspQdPxyrBo1mgDMspcZ6nrnvCQhwXF1P2Mw-OGpH4YEaVnuvCXFnPja9drpcbgfQd0Ux0rUL5_7iWAcnndlqWRCaGllcIryIEoESOS1PnG0rYzgECZ6m8jq78Pxisx_BE56wslOy-0ZiJnc0um-oZ93lLXGxVpwnfW13HH8ZSPvekEREpS81Ahspdtp6LH_We0QRr2IJu4UGzZ-E6m4NQOoYPYd1aprWIvwt2aUME5n2ezAtK45ZH1JXiZwqMwOeSB8BQszpkJ25uAAvLhAARUqCb_ovll3N6-p8ffzRx-7EFIso-m_FTiTmMnKwotscGnSoLPCd1_LBH_5yRyAjvEP9jFDBVYiQX--udnS6I9VcvQ_Z9ifrCIN7LjEnKuL8UJRL6mr0BWnstWxFDMuMEOYedtNtaPQ45I-P502TMA8Anmz_9CdbPFgsd4M4MLR6mVcUSybnEyCEDmCkpqH2FT4P-Z_ZBFr64ez91k8vKLdmjqvwbtaysewcYTXtzYTYCkS9NHtHyQkaNNKaP9-1w8v_R5BJI5YgccDsOjY4Vupejgif7vgemYzGyb5GR0_YxzSli8nOvsZ5vQxgSwkEyfNsHdunrThUsDDDqmWwihPQ0vOcBqT3wSIBBP00iv0JKIooI4Prxlc9ehTM2_xvxle5M-Ixd7Atk2qt1VaFdb57YqcmD17',
                     'medico': {
-                        'nome': '',
-                        'ufMedico': '',
-                        'crmMedico': f'{self.crm_class}',
+                        'nome': f'{self.nome_input}',
+                        'ufMedico': f'{self.uf_input}',
+                        'crmMedico': f'{self.crm_input}',
                         'municipioMedico': '',
                         'tipoInscricaoMedico': '',
                         'situacaoMedico': '',
