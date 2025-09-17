@@ -3,12 +3,7 @@
 [![Read the Docs](https://img.shields.io/readthedocs/pyCFM?logo=ReadTheDocs&label=Read%20The%20Docs)](https://pyCFM.readthedocs.io/)
 [![Publish Python to PyPI](https://github.com/michelmetran/pyCFM/actions/workflows/publish-to-pypi-uv.yml/badge.svg)](https://github.com/michelmetran/pyCFM/actions/workflows/publish-to-pypi-uv.yml)
 
-O [e-SAJ](https://esaj.tjsp.jus.br/) (_Sistema de Automação da Justiça_) é um portal do [Tribunal de Justiça de São Paulo](https://www.tjsp.jus.br/) (TJSP), desenvolvido pela [Softplan](https://www.softplan.com.br/), que facilita a troca de informações e agiliza o trâmite processual. Ele oferece diversos serviços _online_ voltados para advogados, cidadãos e serventuários da justiça. Algumas funcionalidades do e-SAJ incluem:
-
-- **Consulta Processual**: acesso às informações de tramitação dos processos de primeiro e segundo grau.
-- **Peticionamento Eletrônico**: protocolo e consulta de petições iniciais e intermediárias.
-- **Diário da Justiça Eletrônico**: consulta aos cadernos das edições publicadas.
-- **_Push_**: serviço que permite ao advogado receber por e-mail as informações sobre a movimentação processual.
+O [CFM](https://esaj.tjsp.jus.br/) (_Sistema de Automação da Justiça_) mantem um serviço para buscar médicos, disponível no _link_ https://portal.cfm.org.br/busca-medicos.
 
 <br>
 

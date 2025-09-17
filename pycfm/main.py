@@ -6,13 +6,14 @@ sss
 
 import json
 import warnings
-from typing import Literal
 from pathlib import Path
+from typing import Literal
 from urllib.parse import urljoin
 
 import requests
 
-# from typing import Literal
+from pycfm import complemento
+
 # import pandas as pd
 
 
@@ -38,6 +39,7 @@ class Medico:
         self.crm_input = '' if crm is None else crm
         self.uf_input = '' if uf is None else uf
         self.nome_input = '' if nome is None else nome
+        self.nome_input = complemento.remover_acentos(texto=self.nome_input)
 
         # Chamada de Funções
         self._busca_medico()
