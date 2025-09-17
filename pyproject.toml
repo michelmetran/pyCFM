@@ -1,0 +1,21 @@
+[project]
+name = "pycfm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.3.2",
+    "python-dotenv>=1.1.1",
+    "requests>=2.32.5",
+]
+
+[dependency-groups]
+dev = [
+    "notebook>=7.4.5",
+]
+docs = [
+    "mkdocs>=1.6.1",
+    "mkdocs-jupyter>=0.25.1",
+    "mkdocs-material[imaging]>=9.6.20",
+]
