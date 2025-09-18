@@ -1,6 +1,6 @@
 [project]
 name = 'pycfm'
-version = '0.3.6'
+version = '0.3.7'
 description = 'Obtem dados de médicos acessando informações do Conselho Federal de Medicina'
 readme = 'README.md'
 requires-python = '>=3.11'
