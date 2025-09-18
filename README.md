@@ -1,7 +1,9 @@
 # pyCFM
 
 [![Repo](https://img.shields.io/badge/GitHub-repo-blue?logo=github&logoColor=f5f5f5)](https://github.com/michelmetran/pyCFM)
-[![PyPI - Version](https://img.shields.io/pypi/v/pycfm?logo=pypi&label=PyPI&color=blue)](https://pypi.org/project/pycfm/)<br>
+[![PyPI - Version](https://img.shields.io/pypi/v/pycfm?logo=pypi&label=PyPI&color=blue)](https://pypi.org/project/pycfm/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1XvbBN5J6013xLtpDZYNeo3bQyQTxm-h5?usp=sharing)
+<br>
 [![Read the Docs](https://img.shields.io/readthedocs/pyCFM?logo=ReadTheDocs&label=Read%20The%20Docs)](https://pyCFM.readthedocs.io/)
 [![Publish Python to PyPI](https://github.com/michelmetran/pyCFM/actions/workflows/publish-to-pypi-uv.yml/badge.svg)](https://github.com/michelmetran/pyCFM/actions/workflows/publish-to-pypi-uv.yml)
 
@@ -36,6 +38,7 @@ Já o [Conselho Federal de Medicina (CFM)](https://portal.cfm.org.br/) é o órg
 - Para gerenciamento do projeto e dependências, utilizou-se o [uv](https://docs.astral.sh/uv/).
 - Para documentação foi usado o [MkDocs](https://www.mkdocs.org/)
 - Foi usado o [requests](https://pypi.org/project/requests/) para as requisições.
+- Se quiser fazer um teste rápido, clique no botão [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1XvbBN5J6013xLtpDZYNeo3bQyQTxm-h5?usp=sharing)
 
 <br>
 
@@ -44,3 +47,4 @@ Já o [Conselho Federal de Medicina (CFM)](https://portal.cfm.org.br/) é o órg
 ## TODO
 
 1. ~~Usar `session`~~
+2. Ajustar obten;áo de foto. Tá falhando.

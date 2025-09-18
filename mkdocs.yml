@@ -1,7 +1,7 @@
 # Basic
 site_name: pyCFM
 site_author: Michel Metran
-site_description: O e-SAJ (Sistema de Automação da Justiça) é um portal do TJSP, desenvolvido pela Softplan, que facilita a troca de informações e agiliza o trâmite processual. O pacote pyESAJ foi desenvolvido para permitir a interação com o e-SAJ por meio do python.
+site_description: Obtem dados de médicos acessando informações do Conselho Federal de Medicina usando python!
 #site_url: https://pyESAJ.readthedocs.io/
 #site_url: https://pyesaj.readthedocs.io/pt/latest/
 site_url: https://pycfm.readthedocs.io/
@@ -62,7 +62,7 @@ theme:
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
-      primary: deep purple
+      primary: green
       accent: indigo
       toggle:
         icon: material/brightness-auto
@@ -71,7 +71,7 @@ theme:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: deep purple
+      primary: green
       accent: indigo
       toggle:
         icon: material/brightness-7
@@ -80,7 +80,7 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep purple
+      primary: green
       accent: indigo
       toggle:
         icon: material/brightness-4

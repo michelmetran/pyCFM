@@ -7,7 +7,7 @@ Para instalar basta dar o comando:
 pip3 install pyCFM
 
 # Instala pacote com versão específicada
-pip3 install pyCFM==0.0.1
+pip3 install pyCFM==3.3.2
 
 # Instala pacote mais atual
 pip3 install pyCFM --upgrade
