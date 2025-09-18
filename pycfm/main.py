@@ -11,6 +11,7 @@ from typing import Literal
 from urllib.parse import urljoin
 
 import requests
+from tabulate import tabulate
 
 from pycfm import complemento
 
@@ -81,7 +82,7 @@ class Medico:
                     },
                     'page': 1,
                     'pageNumber': 1,
-                    'pageSize': 10,
+                    'pageSize': 50,
                 }
             ],
         )
@@ -98,9 +99,15 @@ class Medico:
             if len(data['dados']) == 1:
                 self._data = data['dados'][0]
 
+            elif len(data['dados']) == 0:
+                raise Exception('Não encontrou registros')
+
             else:
                 self._data = data['dados']
-                warnings.warn('Avaliar por que deu mais que um registro!')
+                warnings.warn(
+                    'Especificar dados para apresentar somente um registro'
+                )
+                print(tabulate(self._data, headers='keys', tablefmt='pretty'))
                 raise Exception('Avaliar por que deu mais que um registro!')
 
         else:
@@ -253,18 +260,24 @@ class Medico:
         return self._data_foto['HASH']
 
     def _request_foto(self):
+        """
+        _summary_
+
+        :raises Exception: _description_
+        """
         # Monta URL
         url = urljoin(
             base=URL_BASE,
             url='/wp-content/themes/portalcfm/assets/php/foto_medico.php',
         )
 
+        # Faz a requisição
         r = requests.get(
             url=url,
             params={
-                'crm': f'{self.crm}',
+                'crm': self.crm,
                 'uf': self.uf,
-                'hash': '4c0480bc18e5c1fecf4f3ba46beedfa9',
+                'hash': self.uf,
             },
         )
 
@@ -275,9 +288,9 @@ class Medico:
         else:
             raise Exception('Acesso a API não deu certo')
 
-    def save_photo(self, filepath: str | Path = 'foto_medico.jpg'):
+    def save_photo(self, filepath: str | Path = 'foto_medico.jpg') -> None:
         """
-        _summary_
+        Salva a foto
 
         :param filepath: _description_, defaults to 'foto_medico.jpg'
         :type filepath: str, optional
@@ -285,10 +298,16 @@ class Medico:
         # Faz requisição de foto
         self._request_foto()
 
-        # Para salvar a imagem, por exemplo:
-        # output_path / f'medico_crm_{crm}.jpg'
-        with open(file=filepath, mode='wb') as f:
-            f.write(self.photo)
+        try:
+            msg = self.photo.decode('utf-8')
+            if msg == 'Não autorizado.':
+                warnings.warn('Requisição não autorizada. Ajustar!')
+
+        except:
+            # Para salvar a imagem, por exemplo:
+            # output_path / f'medico_crm_{crm}.jpg'
+            with open(file=filepath, mode='wb') as f:
+                f.write(self.photo)
 
 
 if __name__ == '__main__':

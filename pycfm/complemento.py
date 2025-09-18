@@ -1,22 +1,16 @@
 """
-_summary_
-
-:return: _description_
-:rtype: _type_
+Módulo com funções complementares
 """
 
-import math
 import unicodedata
 
 
-def remover_acentos(texto):
+def remover_acentos(texto: str) -> str:
     """
-    Remove acentos
+    Remove acentos e cedilhas
 
-    :param texto: _description_
-    :type texto: _type_
-    :return: _description_
-    :rtype: _type_
+    :param texto: Texto com acento, cedilha etc.
+    :return: Texto sem acento, cedilha etc.
     """
     if texto is None:
         return texto
@@ -28,6 +22,8 @@ def remover_acentos(texto):
     )
 
 
-# remover_acentos(texto='Gánçalo')
-# remover_acentos(texto='5.1')
-# remover_acentos(texto=None)
+if __name__ == '__main__':
+    # remover_acentos(texto='Gánçalo')
+    # remover_acentos(texto='5.1')
+    # remover_acentos(texto=None)
+    pass

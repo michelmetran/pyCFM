@@ -1,10 +1,10 @@
 [project]
 name = 'pycfm'
-version = "0.3.0"
-description = "Add your description here"
+version = '0.3.1'
+description = 'Add your description here'
 readme = 'README.md'
 requires-python = '>=3.11'
-dependencies = ['pandas>=2.3.2', 'requests>=2.32.5']
+dependencies = ['pandas>=2.3.2', 'requests>=2.32.5', 'tabulate>=0.9.0']
 
 [dependency-groups]
 dev = ['notebook>=7.4.5']
