@@ -20,13 +20,14 @@ nav:
   - Home: index.md
   - Como Instalar?: pages/como-instalar.md
   - Como Usar?:
-      - Exemplos: scripts/02_classe.ipynb
+      - Busca Médico: scripts/busca_medicos.ipynb
+      - Listas: scripts/listas.ipynb
   #     - Navegador/Driver: scripts/driver.ipynb
   #     - Login: scripts/login.ipynb
   #     - Dados Cadastrais: scripts/cadastro.ipynb
   #     - Gerenciamento de Perfil: scripts/gerenciamento_perfil.ipynb
   #     - Consulta de Processos: scripts/consulta_processo.ipynb
-  - Histórico: pages/histórico.md
+  # - Histórico: pages/histórico.md
   - Como Contribuir?: pages/como-contribuir.md
   # - Page Object Model: pages/pacote.md
   # - Bugs: pages/bugs.md

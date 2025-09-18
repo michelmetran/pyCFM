@@ -26,7 +26,36 @@ class Medico:
         self,
         nome: str | None = None,
         crm: int | None = None,
-        uf: Literal['SP', 'RJ', None] = None,
+        uf: Literal[
+            'AC',
+            'AL',
+            'AM',
+            'AP',
+            'BA',
+            'CE',
+            'DF',
+            'ES',
+            'GO',
+            'MA',
+            'MG',
+            'MT',
+            'MS',
+            'PA',
+            'PB',
+            'PE',
+            'PI',
+            'PR',
+            'RJ',
+            'RN',
+            'RS',
+            'RO',
+            'RR',
+            'SC',
+            'SP',
+            'SE',
+            'TO',
+            None,
+        ] = None,
     ) -> None:
         """
         _summary_
@@ -42,6 +71,9 @@ class Medico:
         self.nome_input = '' if nome is None else nome
         self.nome_input = complemento.remover_acentos(texto=self.nome_input)
 
+        # Session
+        self.s = requests.Session()
+
         # Chamada de Funções
         self._busca_medico()
         self._buscar_foto()
@@ -49,13 +81,7 @@ class Medico:
 
     def _busca_medico(self):
         """
-        _summary_
-
-        :param crm: _description_, defaults to 240538
-        :type crm: int, optional
-        :raises Exception: _description_
-        :raises Exception: _description_
-        :raises Exception: _description_
+        Faz a pesquisa de um médico
         """
         # Monta URL
         url = urljoin(
@@ -63,7 +89,7 @@ class Medico:
         )
 
         # Faz Requisição
-        r = requests.post(
+        r = self.s.post(
             url=url,
             json=[
                 {
@@ -171,11 +197,7 @@ class Medico:
 
     def _buscar_foto(self):
         """
-        _summary_
-
-        :raises Exception: _description_
-        :raises Exception: _description_
-        :raises Exception: _description_
+        Busca dados para obter, posteriormente, uma foto do médico.
         """
 
         # Monta URL
@@ -184,7 +206,7 @@ class Medico:
         )
 
         # Faz requisição
-        r = requests.post(
+        r = self.s.post(
             url=url,
             json=[
                 {
@@ -261,9 +283,7 @@ class Medico:
 
     def _request_foto(self):
         """
-        _summary_
-
-        :raises Exception: _description_
+        Faz requisição para obter bytes da foto.
         """
         # Monta URL
         url = urljoin(
@@ -272,7 +292,7 @@ class Medico:
         )
 
         # Faz a requisição
-        r = requests.get(
+        r = self.s.get(
             url=url,
             params={
                 'crm': self.crm,
@@ -311,6 +331,5 @@ class Medico:
 
 
 if __name__ == '__main__':
-
     medico = Medico(crm=240538)
     print(medico)
