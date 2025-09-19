@@ -15,8 +15,6 @@ from tabulate import tabulate
 
 from pycfm import complemento
 
-# import pandas as pd
-
 
 URL_BASE = 'https://portal.cfm.org.br/'
 
@@ -58,12 +56,11 @@ class Medico:
         ] = None,
     ) -> None:
         """
-        _summary_
+        Classe "Médico", usado para obter informação no Conselho Federal de Medicina.
 
-        :param crm: _description_
-        :type crm: int
-        :param uf: _description_
-        :type uf: Literal[&#39;SP&#39;, &#39;RJ&#39;]
+        :param nome: Nome (parcial) do médico que se deseja pesquisar. Acentos e cedilhas são removidos para pesquisa.
+        :param crm: Número (int) do CRM que se deseja pesquisar.
+        :param uf: Sigla da unidade da federação (UF) do CRM que se deseja pesquisar.
         """
         # Parâmetros de Pesquisa
         self.crm_input = '' if crm is None else crm
@@ -79,7 +76,7 @@ class Medico:
         self._buscar_foto()
         self._request_foto()
 
-    def _busca_medico(self):
+    def _busca_medico(self) -> None:
         """
         Faz a pesquisa de um médico
         """
@@ -195,7 +192,7 @@ class Medico:
     def security_hash(self):
         return self._data['SECURITYHASH']
 
-    def _buscar_foto(self):
+    def _buscar_foto(self) -> None:
         """
         Busca dados para obter, posteriormente, uma foto do médico.
         """
@@ -281,9 +278,9 @@ class Medico:
     def hash(self):
         return self._data_foto['HASH']
 
-    def _request_foto(self):
+    def _request_foto(self) -> None:
         """
-        Faz requisição para obter bytes da foto.
+        Faz requisição para obter *bytes* da foto.
         """
         # Monta URL
         url = urljoin(
@@ -328,6 +325,9 @@ class Medico:
             # output_path / f'medico_crm_{crm}.jpg'
             with open(file=filepath, mode='wb') as f:
                 f.write(self.photo)
+
+    def __repr__(self) -> str:
+        return f'Objeto que armazena dados do médic@ {self.nome}'
 
 
 if __name__ == '__main__':
