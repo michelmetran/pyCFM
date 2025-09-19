@@ -1,6 +1,6 @@
 [project]
 name = 'pycfm'
-version = '0.3.9'
+version = '0.4.0'
 description = 'Obtem dados de médicos acessando informações do Conselho Federal de Medicina'
 authors = [{ name = 'michelmetran', email = 'michelmetran@gmail.com' }]
 keywords = ['CRM', 'CFM', 'github', 'médicos']
