@@ -44,7 +44,7 @@ Já o [Conselho Federal de Medicina (CFM)](https://portal.cfm.org.br/) é o órg
 
 ---
 
-## TODO
+## _TODO_
 
 1. ~~Usar `session`~~
 2. Ajustar obtenção de foto. Tá falhando.
